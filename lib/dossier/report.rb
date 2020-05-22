@@ -25,7 +25,8 @@ module Dossier
     end
     
     def initialize(options = {})
-      @options = options.dup.with_indifferent_access
+      incoming_options = options.to_unsafe_h if options.respond_to?(:to_unsafe_h)
+      @options = incoming_options.dup.with_indifferent_access
     end
 
     def sql
