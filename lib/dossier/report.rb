@@ -25,7 +25,7 @@ module Dossier
     end
     
     def initialize(options = {})
-      @options = incoming_options.to_h.with_indifferent_access
+      @options = options.to_h.with_indifferent_access
     end
 
     def sql
